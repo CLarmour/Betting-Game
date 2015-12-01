@@ -1,0 +1,14 @@
+h1 {
+  color: #FF0095;
+  text-align: center;
+  font-family: Verdana;
+}
+#game_area {
+  text-align: center;
+  color: #FF0095;
+  font-family: Verdana;
+}
+#balance {
+  text-align: center;
+  font-size: 24px;
+}
