@@ -1,5 +1,5 @@
-// 
-document.addEventListener("DOMContentLoaded", function() {
+
+$(document).ready(function() {
   console.log("DOM fully loaded");
 
   var generateRandomNumber = function() {
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Takes the text in the tag, and returns it into a string. 
   var displayBalance = function(balance) {
-    document.querySelector("#balance").innerText = balance;
+    $("#balance").text(balance);
   }
 
 // Sets the balance and displays the balance.
@@ -18,15 +18,12 @@ document.addEventListener("DOMContentLoaded", function() {
 // Need the .value because the it is a user input field
   var getInputs = function() {
     var bet, guess;
-    bet = document.querySelector("#bet").value;
+    bet = $("#bet").val();
     bet = parseInt(bet);
 
-    guessElement = document.querySelector("#guess");
+    guess = $("#guess").val();
+    guess = parseInt(guess);
 
-    if(guessElement) {
-      guess = guessElement.value
-      guess = parseInt(guess);
-    }
 
     // FIXME: Add function to validate inputs here
     return {bet: bet, guess: guess};
@@ -50,8 +47,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Play the round as soon as the user is done filling out the second input field
   // document.querySelector("#number").addEventListener("blur", playRound);
-  document.querySelector("button").addEventListener("click", playRound);
-  document.querySelector("#game_area").addEventListener("click", function(e) {
+  $("button").on("click", playRound);
+  $("#game_area").on("click", function(e) {
     console.log("game area caught click");
   });
  
